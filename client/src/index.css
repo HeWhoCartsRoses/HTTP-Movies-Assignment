@@ -35,7 +35,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+a{
+  text-decoration: none;
+}
 .saved-list h3 {
   margin-right: 10px;
 }
@@ -61,6 +63,7 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
+
 .save-button:hover {
   background-color: green;
   color: white;
