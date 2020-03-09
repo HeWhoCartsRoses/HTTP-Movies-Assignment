@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 function Movie({ addToSavedList }) {
   const [movie, setMovie] = useState(null);
@@ -12,7 +12,6 @@ function Movie({ addToSavedList }) {
       .then(res => setMovie(res.data))
       .catch(err => console.log(err.response));
   };
-
   const saveMovie = () => {
     addToSavedList(movie);
   };
@@ -31,7 +30,9 @@ function Movie({ addToSavedList }) {
       <div className='save-button' onClick={saveMovie}>
         Save
       </div>
-      <button onClick={Update}>Update</button>
+      <Link key={movie.id} movie={movie} to={`/update-movie/${movie.id}`}>
+        UPDAT
+      </Link>
     </div>
   );
 }
